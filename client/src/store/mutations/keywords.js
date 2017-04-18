@@ -9,12 +9,10 @@ export const setTopArticles = (state, articles) => {
     state.topArticles.results.push(article)
     count++
   })
-  console.log('>>> added', count)
 }
 
 export const incrementKeywordPage = state => {
   state.topArticles.pagination++
-  console.log('incremented pagination:', state.topArticles.pagination)
 }
 
 export const toggleInfinitScroll = state => {

@@ -29,13 +29,10 @@ export const addArticlesBySourceId = ( { commit, state, getters }, id ) =>
     const source = state.sources.results.find(s =>
       s.id === Number(id))
     const expectedArticles = Number(source ? source.total_articles : 0)
-
-    console.log('Yo... I have', numArticles, 'expected', expectedArticles)
     if (numArticles === expectedArticles) {
       state.articles.status = FetchStatus.COMPLETE
       return resolve('Already have articles in store')
     }
-
     axios.get(`${HOST_A}/api/sources/${id}`)
       .then(response => {
         state.articles.status = FetchStatus.COMPLETE

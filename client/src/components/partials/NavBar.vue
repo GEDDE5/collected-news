@@ -94,8 +94,6 @@ export default {
       let route = $('#search-by').dropdown('get value') || 'keyword-search'
       this.$router.push({ name: route, params: { key: this.searchTerm }})
       this.searchTerm = ''
-      console.log('search by', route)
-
     },
     searchingBy() {
       let search = $('#search-by').dropdown('get value')

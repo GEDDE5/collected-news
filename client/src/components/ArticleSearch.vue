@@ -72,13 +72,10 @@ export default {
         this.buildArticleIndex()
         .then(() => {
           let refs = this.articleSearch(this.$route.params.key)
-          console.log('searching for', refs)
           if (!refs.length) {
-            console.log('nothing!')
             return resolve()
           }
           let results = []
-
           this.done = true
           if (refs.length >= 20) {
             this.max = true
@@ -87,24 +84,6 @@ export default {
           }
           this.hitRefs = refs
           resolve(refs)
-          // refs.forEach(ref => {
-          //   results.push(this.lunrDocById(ref))
-          // })
-          // return results
-          // Promise.all(refs.map((ref) => this.addArticleById(ref))).then((articles) => {
-          //   articles.forEach(article => {
-          //     results.push(article)
-          //   })
-          //   console.log(results)
-          //   this.done = true
-          //   if (refs.length >= 20) {
-          //     this.max = true
-          //   } else {
-          //     this.max = false
-          //   }
-
-          //   this.hitRefs = refs
-          // })
         })
       })
     }

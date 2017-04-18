@@ -44,12 +44,9 @@ export default {
     ]),
     loadMore() {
       this.toggleInfinitScroll()
-      console.log('heyo!!')
-
       setTimeout(() => {
         this.setTopKeywordArticles()
         this.incrementKeywordPage()
-        console.log('get', this.topArticles.pagination)
         this.toggleInfinitScroll()
       }, 1000);
     }

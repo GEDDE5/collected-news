@@ -40,9 +40,6 @@
 export default {
   name: 'statistics',
   props: ['allSources'],
-  mounted () {
-    console.log(this.sources);
-  },
   computed: {
     lastUpdated () {
       let pubDates = this.sources.results

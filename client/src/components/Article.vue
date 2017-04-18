@@ -49,7 +49,6 @@ export default {
       return moment(this.article.pubDate).format('lll')
     },
     source() {
-      console.log('source',this.sourceById(Number(this.article.sourceId)))
       return this.sourceById(Number(this.article.sourceId))
     },
     article() {

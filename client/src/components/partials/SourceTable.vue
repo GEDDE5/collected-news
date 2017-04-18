@@ -90,7 +90,6 @@ export default {
         return 'unknown'
       }
       if ( Date.now() - pubDate < 0) {
-        console.log('date is in future!')
         return moment(pubDate - 3600000).fromNow()
       }
       return moment(source).fromNow()

@@ -55,7 +55,6 @@ export default {
       return this.paginateSources(this.sourcePagintation)
     },
     sourceFilter() {
-      console.log(this.sources.filter)
       return this.sources.filter
     },
     hasSources () {

@@ -26,9 +26,7 @@ export default {
   methods: {
     ...mapActions(['updateSourcePage']),
     setPage (event) {
-
       this.updateSourcePage(Number(event.target.innerText) - 1)
-      console.log('yo.. page:', this.sourcePagintation, 'this:', Number(event.target.innerText))
     },
     isActive(p) {
       return this.sourcePagintation === p - 1
@@ -37,7 +35,6 @@ export default {
       let targetPage = this.sourcePagintation - 1
       if (targetPage > 0) {
         this.updateSourcePage(targetPage)
-        console.log(this.sourcePagintation)
       } else {
         this.updateSourcePage(this.numPages - 1)
       }

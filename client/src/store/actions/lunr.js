@@ -33,7 +33,6 @@ export const buildArticleIndex = ({ commit, state, getters }) => {
 export const getKeywordSearch = ({ commit, state }, query) => {
   return new Promise ((resolve, reject) => {
     state.keywordSearch.status = FetchStatus.LOADING
-    console.log(query)
     let results = []
     axios.get(`${Hosts.ACTIVE}/api/keywords/${query}`)
     .then(function (response) {
@@ -74,7 +73,6 @@ export const getKeywords = ({ commit, state }) => {
       resolve()
     })
     .catch(function (error) {
-      console.log(error)
       reject()
     })
   })

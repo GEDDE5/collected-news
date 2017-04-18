@@ -46,7 +46,6 @@ export default {
           this.keywords.results.forEach( keyword => {
             if (keyword.name == this.$route.params.key.toLowerCase()) {
               matched = true
-              console.log(keyword.name)
               this.$store.dispatch('getKeywordSearch', keyword.name)
             }
           })
@@ -57,7 +56,6 @@ export default {
     }
   },
   mounted () {
-    console.log('calling mounted')
     this.match()
   }
 }
